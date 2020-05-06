@@ -112,24 +112,27 @@ public class MainActivity extends AppCompatActivity {
         movieResultCall.enqueue(new Callback<MovieResult>() {
             @Override
             public void onResponse(Call<MovieResult> call, Response<MovieResult> response) {
-                if (page ==1){
-                    if (response.body() != null) {
-                        generateData(response.body().getMovies());
-                    }
-                }else{
-                    List<Movie> movieList = null;
-                    if (response.body() != null) {
-                        movieList = response.body().getMovies();
-                    }
-                    if (movieList != null) {
-                        for (Movie movie: movieList){
-                            moviesData.add(movie);
-                            movieAdapter.notifyItemChanged(moviesData.size()-1);
-
+                if (response.isSuccessful()){
+                    if (page ==1){
+                        if (response.body() != null) {
+                            generateData(response.body().getMovies());
                         }
-                    }
+                    }else{
+                        List<Movie> movieList = null;
+                        if (response.body() != null) {
+                            movieList = response.body().getMovies();
+                        }
+                        if (movieList != null) {
+                            for (Movie movie: movieList){
+                                moviesData.add(movie);
+                                movieAdapter.notifyItemChanged(moviesData.size()-1);
 
+                            }
+                        }
+
+                    }
                 }
+
             }
 
             @Override
@@ -172,12 +175,11 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean checkInternetConnectivity(){
         ConnectivityManager connectivityManager =(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo !=null && networkInfo.isConnected()){
-            return true;
-        }else{
-            return false;
+        NetworkInfo networkInfo = null;
+        if (connectivityManager != null) {
+            networkInfo = connectivityManager.getActiveNetworkInfo();
         }
+        return networkInfo != null && networkInfo.isConnected();
 
     }
 
