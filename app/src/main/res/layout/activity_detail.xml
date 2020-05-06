@@ -23,68 +23,75 @@
                 android:layout_width="189dp"
                 android:layout_height="260dp"/>
 
-
-            <LinearLayout
+            <ScrollView
                 android:layout_marginLeft="10dp"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    android:text="Title:"
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/movie_title"
-                    android:textColor="@android:color/black"
-                    android:layout_marginTop="5dp"
-                    android:textSize="22sp"
-                    android:text="ABCDE Moview "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Title:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:text="Rating:"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/movie_title"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:textSize="22sp"
+                        android:text="ABCDE Moview "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:id="@+id/user_rating"
-                    android:text="4.5"
-                    android:textSize="22sp"
-                    android:textColor="@android:color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    <TextView
+                        android:text="Rating:"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:text="Release Date:"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/user_rating"
+                        android:text="4.5"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:id="@+id/release_date"
-                    android:text="Jan 10, 2021"
-                    android:textSize="22sp"
-                    android:textColor="@android:color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    <TextView
+                        android:text="Release Date:"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/release_date"
+                        android:text="Jan 10, 2021"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
 
-            </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+
+
 
         </LinearLayout>
 

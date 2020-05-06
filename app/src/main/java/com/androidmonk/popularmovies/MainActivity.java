@@ -113,13 +113,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<MovieResult> call, Response<MovieResult> response) {
                 if (page ==1){
-                    generateData(response.body().getMovies());
+                    if (response.body() != null) {
+                        generateData(response.body().getMovies());
+                    }
                 }else{
-                    List<Movie> movieList =response.body().getMovies();
-                    for (Movie movie: movieList){
-                        moviesData.add(movie);
-                        movieAdapter.notifyItemChanged(moviesData.size()-1);
+                    List<Movie> movieList = null;
+                    if (response.body() != null) {
+                        movieList = response.body().getMovies();
+                    }
+                    if (movieList != null) {
+                        for (Movie movie: movieList){
+                            moviesData.add(movie);
+                            movieAdapter.notifyItemChanged(moviesData.size()-1);
 
+                        }
                     }
 
                 }
